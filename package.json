@@ -97,7 +97,7 @@
     "jsdom": "^27.4.0",
     "tailwindcss": "^4.1.17",
     "typescript": "~5.9.3",
-    "vite-plus": "^0.1.19"
+    "vite-plus": "0.1.21-alpha.6"
   },
   "packageManager": "npm@11.8.0"
 }
