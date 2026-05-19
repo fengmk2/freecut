@@ -137,45 +137,45 @@ Brave may disable the File System Access API. To enable it:
 
 ## Keyboard Shortcuts
 
-| Action | Shortcut |
-|---|---|
-| Play / Pause | `Space` |
-| Previous / Next frame | `Left` / `Right` |
-| Previous / Next snap point | `Up` / `Down` |
-| Go to start / end | `Home` / `End` |
-| Split at playhead | `Ctrl+K` / `Alt+C` |
-| Split at cursor | `Shift+C` |
-| Join clips | `Shift+J` |
-| Delete selected | `Delete` |
-| Ripple delete | `Ctrl+Delete` |
-| Freeze frame | `Shift+F` |
-| Nudge item (1px / 10px) | `Shift+Arrow` / `Ctrl+Shift+Arrow` |
-| Undo / Redo | `Ctrl+Z` / `Ctrl+Shift+Z` |
-| Copy / Cut / Paste | `Ctrl+C` / `Ctrl+X` / `Ctrl+V` |
-| Selection tool | `V` |
-| Razor tool | `C` |
-| Rate stretch tool | `R` |
-| Rolling edit tool | `N` |
-| Ripple edit tool | `B` |
-| Slip tool | `Y` |
-| Slide tool | `U` |
-| Toggle snap | `S` |
-| Add / Remove marker | `M` / `Shift+M` |
-| Previous / Next marker | `[` / `]` |
-| Add keyframe | `A` |
-| Clear keyframes | `Shift+A` |
-| Toggle keyframe editor | `Ctrl+Shift+A` |
-| Keyframe view: graph / dopesheet / split | `1` / `2` / `3` |
-| Group / Ungroup tracks | `Ctrl+G` / `Ctrl+Shift+G` |
-| Mark In / Out | `I` / `O` |
-| Clear In/Out | `Alt+X` |
-| Insert / Overwrite edit | `,` / `.` |
-| Open Scene Browser | `Ctrl+Shift+F` |
-| Zoom in / out | `Ctrl+=` / `Ctrl+-` |
-| Zoom to fit | `\` |
-| Zoom to 100% | `Shift+\` |
-| Save | `Ctrl+S` |
-| Export | `Ctrl+Shift+E` |
+| Action                                   | Shortcut                           |
+| ---------------------------------------- | ---------------------------------- |
+| Play / Pause                             | `Space`                            |
+| Previous / Next frame                    | `Left` / `Right`                   |
+| Previous / Next snap point               | `Up` / `Down`                      |
+| Go to start / end                        | `Home` / `End`                     |
+| Split at playhead                        | `Ctrl+K` / `Alt+C`                 |
+| Split at cursor                          | `Shift+C`                          |
+| Join clips                               | `Shift+J`                          |
+| Delete selected                          | `Delete`                           |
+| Ripple delete                            | `Ctrl+Delete`                      |
+| Freeze frame                             | `Shift+F`                          |
+| Nudge item (1px / 10px)                  | `Shift+Arrow` / `Ctrl+Shift+Arrow` |
+| Undo / Redo                              | `Ctrl+Z` / `Ctrl+Shift+Z`          |
+| Copy / Cut / Paste                       | `Ctrl+C` / `Ctrl+X` / `Ctrl+V`     |
+| Selection tool                           | `V`                                |
+| Razor tool                               | `C`                                |
+| Rate stretch tool                        | `R`                                |
+| Rolling edit tool                        | `N`                                |
+| Ripple edit tool                         | `B`                                |
+| Slip tool                                | `Y`                                |
+| Slide tool                               | `U`                                |
+| Toggle snap                              | `S`                                |
+| Add / Remove marker                      | `M` / `Shift+M`                    |
+| Previous / Next marker                   | `[` / `]`                          |
+| Add keyframe                             | `A`                                |
+| Clear keyframes                          | `Shift+A`                          |
+| Toggle keyframe editor                   | `Ctrl+Shift+A`                     |
+| Keyframe view: graph / dopesheet / split | `1` / `2` / `3`                    |
+| Group / Ungroup tracks                   | `Ctrl+G` / `Ctrl+Shift+G`          |
+| Mark In / Out                            | `I` / `O`                          |
+| Clear In/Out                             | `Alt+X`                            |
+| Insert / Overwrite edit                  | `,` / `.`                          |
+| Open Scene Browser                       | `Ctrl+Shift+F`                     |
+| Zoom in / out                            | `Ctrl+=` / `Ctrl+-`                |
+| Zoom to fit                              | `\`                                |
+| Zoom to 100%                             | `Shift+\`                          |
+| Save                                     | `Ctrl+S`                           |
+| Export                                   | `Ctrl+Shift+E`                     |
 
 ## Tech Stack
 
