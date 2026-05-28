@@ -101,7 +101,11 @@
     "jsdom": "27.4.0",
     "tailwindcss": "4.2.2",
     "typescript": "5.9.3",
-    "vite-plus": "0.1.19"
+    "vite-plus": "https://pkg.pr.new/voidzero-dev/vite-plus@1588"
+  },
+  "overrides": {
+    "@voidzero-dev/vite-plus-core": "https://pkg.pr.new/voidzero-dev/vite-plus/@voidzero-dev/vite-plus-core@5577b0154f33d1480a3c96347e94fa5d2094de2e",
+    "@voidzero-dev/vite-plus-prompts": "https://pkg.pr.new/voidzero-dev/vite-plus/@voidzero-dev/vite-plus-prompts@5577b0154f33d1480a3c96347e94fa5d2094de2e"
   },
   "packageManager": "npm@11.8.0"
 }
