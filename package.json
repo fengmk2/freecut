@@ -107,7 +107,7 @@
     "playwright": "^1.60.0",
     "tailwindcss": "4.2.2",
     "typescript": "5.9.3",
-    "vite-plus": "0.1.19"
+    "vite-plus": "https://pkg.pr.new/voidzero-dev/vite-plus@1738"
   },
   "packageManager": "npm@11.8.0"
 }
