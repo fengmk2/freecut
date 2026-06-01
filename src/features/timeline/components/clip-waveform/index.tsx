@@ -134,7 +134,10 @@ export const ClipWaveform = memo(function ClipWaveform({
     const endOffset = (visibleEndX / Math.max(1, pixelsPerSecond)) * speed
     const sourceA = isReversed ? effectiveEnd - endOffset : effectiveStart + startOffset
     const sourceB = isReversed ? effectiveEnd - startOffset : effectiveStart + endOffset
-    const padSeconds = Math.max(2, ((visibleEndX - visibleStartX) / Math.max(1, pixelsPerSecond)) * 0.25)
+    const padSeconds = Math.max(
+      2,
+      ((visibleEndX - visibleStartX) / Math.max(1, pixelsPerSecond)) * 0.25,
+    )
 
     return {
       start: Math.max(0, Math.min(sourceA, sourceB) - padSeconds),

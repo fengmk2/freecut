@@ -128,7 +128,11 @@ async function main() {
   }
 
   const server = await createHarnessServer({ distDir })
-  const browser = await chromium.launch({ channel: 'chrome', headless: true, args: chromeLaunchArgs() })
+  const browser = await chromium.launch({
+    channel: 'chrome',
+    headless: true,
+    args: chromeLaunchArgs(),
+  })
   try {
     const context = await browser.newContext({ acceptDownloads: true })
     const page = await context.newPage()
@@ -144,7 +148,10 @@ async function main() {
     console.log('\nRender:')
     const downloadPromise = page.waitForEvent('download', { timeout: 120_000 })
     downloadPromise.catch(() => {})
-    const summary = await page.evaluate((input) => window.freecut.renderTimeline(input), TEXT_TIMELINE)
+    const summary = await page.evaluate(
+      (input) => window.freecut.renderTimeline(input),
+      TEXT_TIMELINE,
+    )
     const outPath = path.join(os.tmpdir(), 'freecut-headless-regression.webm')
     const download = await downloadPromise
     await download.saveAs(outPath)
@@ -152,7 +159,11 @@ async function main() {
 
     check('render returns ok', summary.ok === true)
     check('render mime is video', /video\//.test(summary.mimeType), summary.mimeType)
-    check('render duration ~3s', Math.abs(summary.durationSeconds - 3) < 0.3, `got ${summary.durationSeconds}`)
+    check(
+      'render duration ~3s',
+      Math.abs(summary.durationSeconds - 3) < 0.3,
+      `got ${summary.durationSeconds}`,
+    )
     check('render produced bytes (>1KB)', size > 1000, `size ${size}`)
 
     // --- Edit path ---

@@ -7,12 +7,14 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 ## [Current] — week of 2026-05-25
 
 ### Added
+
 - In-app render queue — line up several exports and they render one after another, surviving a page refresh
 - One-click quality presets in the export dialog
 - Exports now save to a per-project folder, with a notice showing where files land
 - Automatic caption styling, with per-item progress in the AI panel
 
 ### Fixed
+
 - Waveforms render from true audio peaks and stay sharp when zoomed in
 - Waveforms no longer flash a skeleton when moving a clip to another track
 - Preview no longer jumps when entering pen/path edit mode
@@ -20,28 +22,33 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 - Remaining placeholder strings are now translated across all 9 languages
 
 ### Improved
+
 - Much smoother timeline zooming and scrolling, especially with many clips on screen
 - The editor stays responsive while audio loads — decoding now runs in the background
 
 ## [2026.05.18] — week of 2026-05-18 to 2026-05-24
 
 ### Added
+
 - Hold (stepped) interpolation for keyframes
 - Language switcher on the projects page, with more panels translated (text tools, transitions, scene browser)
 
 ### Fixed
+
 - Rotated videos display the correct orientation in skim preview and exports
 - Scrub overlay stays aligned and the skim indicator sits flush on clip edges
 - Transitions on same-clip (A-A) splits now render correctly
 - Splitting a reversed clip keeps both halves continuous
 
 ### Improved
+
 - Filmstrips and waveforms render smoother while zooming the timeline
 - Faster filmstrip reload from disk cache when reopening projects
 
 ## [2026.05.11] — week of 2026-05-11 to 2026-05-17
 
 ### Added
+
 - Translated UI in 9 languages: English, Spanish, French, German, Portuguese (Brazil), Turkish, Japanese, Korean, and Chinese (Simplified)
 - Language picker in editor settings, with auto-detection from your browser
 - Effect names, timeline labels, and media library all translate alongside the rest of the UI
@@ -51,11 +58,13 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 ## [2026.05.04] — week of 2026-05-04 to 2026-05-10
 
 ### Fixed
+
 - Filmstrips reload reliably after reopening a project from your workspace folder
 
 ## [2026.04.27] — week of 2026-04-27 to 2026-05-03
 
 ### Added
+
 - Motion, iris, shape, and DaVinci-style wipe transition packs
 - Lens warp zoom transition
 - Liquid distort transition
@@ -74,6 +83,7 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 - Detect and remove silence across selected clips with preview overlay and ripple delete
 
 ### Fixed
+
 - Effect drag overlays no longer stick or hijack adjacent lanes
 - Transition preset selection syncs with the chosen direction
 - Removed the transition duration cap
@@ -84,12 +94,14 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 - Paused scrub stays on the rendered path with sharp output
 
 ### Improved
+
 - Subtitle cue editor stays responsive with hundreds of cues
 - Smoother playback start when entering a transition
 
 ## [2026.04.20] — week of 2026-04-20 to 2026-04-26
 
 ### Added
+
 - Stacked text spans for mixed-style titles
 - Text box backgrounds and scalable text presets
 - Richer text animation presets grouped by layout
@@ -108,6 +120,7 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 - Move scenes toggle next to search as a segmented control
 
 ### Fixed
+
 - Animated crop renders correctly in exports
 - Curves effect now uses point-based S-curves
 - Compound clip hover preview renders through the canvas engine
@@ -123,6 +136,7 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 ## [2026.04.13] — week of 2026-04-13 to 2026-04-19
 
 ### Added
+
 - Per-clip pitch shift in semitones and cents
 - Compact DaVinci-style six-band clip EQ with floating panels
 - Mixer tuck handle to slide channel strips behind the bus
@@ -141,6 +155,7 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 - Source monitor scrubbing matches timeline playback
 
 ### Fixed
+
 - Disabled tracks remain editable and styled after reload
 - Pen mask tracks are now visible in classic timelines
 - Pen paths default to shapes with 5-second duration
@@ -149,6 +164,7 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 - UI accessibility, transition alpha, and viewport clamp fixes
 
 ### Improved
+
 - Compact clip shell for narrow clips with short-circuited fades
 - Smoother filmstrip rendering when zooming the timeline
 - Smaller 960×540 proxy resolution with worker-side loading
@@ -156,6 +172,7 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 ## [2026.04.06] — week of 2026-04-06 to 2026-04-12
 
 ### Added
+
 - Clip EQ with five-band presets across preview and export
 - SoundTouch-based preview audio replaces WAV path
 - Alt+C as alternate split-at-playhead shortcut
@@ -168,6 +185,7 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 - Delete shortcut routes to keyframe editor when active
 
 ### Fixed
+
 - Split linked items together without sync drift
 - Glitch transition shader no longer paints black regions
 - Context menu submenu clicks no longer deselect items
@@ -176,6 +194,7 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 - Stale timeline in/out points are clamped
 
 ### Improved
+
 - Filmstrip rewritten: no edge gap, pop, or zoom-driven re-renders
 - Reduced drag, marquee, and scroll-driven re-renders
 - Editor dialogs now lazy-load
@@ -184,6 +203,7 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 ## [2026.03.30] — week of 2026-03-30 to 2026-04-05
 
 ### Added
+
 - Nested compound clips with cycle detection and deep-nested rename/delete
 - Crop-aware media layout with soft-edge feathering
 - SVG import, image filmstrips, and draggable text/shape templates
@@ -205,6 +225,7 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 - Alt+scroll to resize tracks from headers
 
 ### Fixed
+
 - GPU transition effect renders when paused on a transition frame
 - Sub-pixel seam gone from uncropped edges
 - Masks apply in composition space with stable refs
@@ -217,6 +238,7 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 ## [2026.03.23] — week of 2026-03-23 to 2026-03-29
 
 ### Added
+
 - Trim, ripple, rolling, slip, and slide tools with live previews
 - Smart zone detection and constraint feedback while editing
 - Tool operation overlay with compact limit edges
@@ -240,11 +262,13 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 - Source patch controls moved into the source monitor
 
 ### Fixed
+
 - Track resize now feels anchored, Resolve-style
 - Transition audio doubling eliminated
 - Prewarm worker initialization and transition cold decode stalls
 
 ### Improved
+
 - Mixer fader decoupled from store writes for smooth dragging
 - Adaptive seek backtracking via keyframe index
 - Batch preseek and faster keyframe extraction
@@ -254,6 +278,7 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 ## [2026.03.16] — week of 2026-03-16 to 2026-03-22
 
 ### Added
+
 - Pen mode with canvas drop, scopes, and interaction lock
 - Mask editing with in-panel keyframe editor
 - Audio transcription
@@ -261,11 +286,13 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 - GPU shader migration for all transitions with export parity
 
 ### Fixed
+
 - Transition playback jitter and scrub stability
 - Waveform now renders on initial media drop
 - Properties sidebar scrollbar
 
 ### Improved
+
 - Export blits GPU composite directly to canvas (no readback)
 - Cold-start playback stalls eliminated
 - Timeline scroll and zoom rendering optimizations
@@ -273,12 +300,14 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 ## [2026.03.09] — week of 2026-03-09 to 2026-03-15
 
 ### Added
+
 - Distort and stylize effect family with color parameters
 - Structured wide-event logging across core features
 
 ## [2026.02.23] — week of 2026-02-23 to 2026-03-01
 
 ### Fixed
+
 - No more infinite retry storms on failed video source init
 - Audio clicks and spurious video warnings eliminated during playback
 - Keyframed transforms apply on ruler frame seeks
@@ -287,6 +316,7 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 - Hidden adjustment tracks now respected in canvas renderer
 
 ### Improved
+
 - Indexed stores, streaming proxies, and cost-aware resolution
 - Memory-aware filmstrip cache with batch optimizations
 - Export: packet remux fast path and streaming source
@@ -296,6 +326,7 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 ## [2026.02.16] — week of 2026-02-16 to 2026-02-22
 
 ### Added
+
 - Ripple edit tool with downstream clip shifting
 - Rolling edit with 2-up frame comparison overlay
 - Slip and slide editing with live filmstrip preview
@@ -318,6 +349,7 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 - Brave browser support guidance in media library
 
 ### Fixed
+
 - Stale properties panel on clip selection
 - Audio stable across split boundaries during playback
 - Playback and proxy seek no longer hang
@@ -328,11 +360,13 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 - Stale asset errors now show a save prompt
 
 ### Improved
+
 - Video source pooling reduces transition flicker
 
 ## [2026.02.09] — week of 2026-02-09 to 2026-02-15
 
 ### Added
+
 - Track groups with collapse, drag, and gate behavior
 - Source monitor with In/Out points and Insert/Overwrite editing
 - Animatable volume and gain via keyframes
@@ -346,6 +380,7 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 - Hover-based keyboard shortcuts for source monitor
 
 ### Fixed
+
 - Transition system overhaul: split-clip stutter and flip flash gone
 - Export corner radius and audio quality now match preview
 - Correct source-FPS conversion for clip trim points
@@ -355,6 +390,7 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 - Export shortcut (Ctrl+E) overrides Chrome default
 
 ### Improved
+
 - App-wide error boundaries and toast notifications
 - Frame callback drift correction and smoother resume playback
 - Filmstrip extraction throttled for lower CPU load
@@ -362,6 +398,7 @@ All notable changes to FreeCut. Weekly CalVer: `YYYY.MM.DD` = the Monday of the 
 ## [2026.02.02] — initial release
 
 ### Added
+
 - Multi-track timeline: drag, drop, trim, razor, zoom, snap
 - Media library with import, metadata, thumbnails, and waveforms
 - Live preview with resizable layout
