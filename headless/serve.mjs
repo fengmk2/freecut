@@ -115,7 +115,9 @@ async function main() {
   // Report the WebGPU adapter so it's obvious whether this is a real GPU.
   const gpu = await probeGpu(page)
   if (gpu.available) {
-    console.log(`WebGPU adapter: ${gpu.vendor || '?'} / ${gpu.architecture || gpu.description || '?'}`)
+    console.log(
+      `WebGPU adapter: ${gpu.vendor || '?'} / ${gpu.architecture || gpu.description || '?'}`,
+    )
   }
   if (isSoftwareGpu(gpu)) {
     console.warn(

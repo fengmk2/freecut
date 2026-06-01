@@ -564,10 +564,7 @@ class WaveformOPFSStorage {
     try {
       const dir = await this.ensureDirectory()
       const requestedStartSample = Math.max(0, Math.floor(startTime * sampleRate))
-      const requestedEndSample = Math.max(
-        requestedStartSample + 1,
-        Math.ceil(endTime * sampleRate),
-      )
+      const requestedEndSample = Math.max(requestedStartSample + 1, Math.ceil(endTime * sampleRate))
       const candidates: RangeIndex[] = []
 
       for await (const entry of dir.values()) {

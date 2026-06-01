@@ -656,8 +656,7 @@ export const MediaLibrary = memo(function MediaLibrary({ onMediaSelect }: MediaL
   const activePreparationTasks = useMemo(
     () =>
       [...preparationTasks.values()].filter(
-        (task) =>
-          task.type !== 'import' && (task.status === 'queued' || task.status === 'running'),
+        (task) => task.type !== 'import' && (task.status === 'queued' || task.status === 'running'),
       ),
     [preparationTasks],
   )
@@ -745,59 +744,56 @@ export const MediaLibrary = memo(function MediaLibrary({ onMediaSelect }: MediaL
     return rows
   }, [transcriptStatus, transcriptProgress, mediaById])
 
-  const preparationItemRows = useMemo(
-    () => {
-      const groups = new Map<
-        string,
-        {
-          id: string
-          name: string
-          kinds: string[]
-          progress: number
-          status: 'queued' | 'running'
-          taskCount: number
-        }
-      >()
+  const preparationItemRows = useMemo(() => {
+    const groups = new Map<
+      string,
+      {
+        id: string
+        name: string
+        kinds: string[]
+        progress: number
+        status: 'queued' | 'running'
+        taskCount: number
+      }
+    >()
 
-      for (const task of activePreparationTasks) {
-        const kind =
-          task.type === 'import'
-            ? t('media.library.preparationType.import')
-            : task.type === 'filmstrip'
-              ? t('media.library.preparationType.filmstrip')
-              : t('media.library.preparationType.waveform')
-        const existing = groups.get(task.mediaId)
-        if (existing) {
-          existing.kinds.push(kind)
-          existing.progress += task.progress
-          existing.taskCount += 1
-          if (task.status === 'running') {
-            existing.status = 'running'
-          }
-          continue
+    for (const task of activePreparationTasks) {
+      const kind =
+        task.type === 'import'
+          ? t('media.library.preparationType.import')
+          : task.type === 'filmstrip'
+            ? t('media.library.preparationType.filmstrip')
+            : t('media.library.preparationType.waveform')
+      const existing = groups.get(task.mediaId)
+      if (existing) {
+        existing.kinds.push(kind)
+        existing.progress += task.progress
+        existing.taskCount += 1
+        if (task.status === 'running') {
+          existing.status = 'running'
         }
-
-        groups.set(task.mediaId, {
-          id: task.mediaId,
-          name: mediaById[task.mediaId]?.fileName ?? task.mediaId,
-          kinds: [kind],
-          progress: task.progress,
-          status: task.status === 'running' ? 'running' : 'queued',
-          taskCount: 1,
-        })
+        continue
       }
 
-      return [...groups.values()].map((row) => ({
-        id: row.id,
-        name: row.name,
-        kind: row.kinds.join(' + '),
-        percent: Math.round((row.progress / row.taskCount) * 100),
-        progress: row.progress / row.taskCount,
-        status: row.status,
-      }))
-    },
-    [activePreparationTasks, mediaById, t],
-  )
+      groups.set(task.mediaId, {
+        id: task.mediaId,
+        name: mediaById[task.mediaId]?.fileName ?? task.mediaId,
+        kinds: [kind],
+        progress: task.progress,
+        status: task.status === 'running' ? 'running' : 'queued',
+        taskCount: 1,
+      })
+    }
+
+    return [...groups.values()].map((row) => ({
+      id: row.id,
+      name: row.name,
+      kind: row.kinds.join(' + '),
+      percent: Math.round((row.progress / row.taskCount) * 100),
+      progress: row.progress / row.taskCount,
+      status: row.status,
+    }))
+  }, [activePreparationTasks, mediaById, t])
   const preparingCount = preparationItemRows.length
   const preparingAvgProgress = useMemo(() => {
     if (preparationItemRows.length === 0) return 0

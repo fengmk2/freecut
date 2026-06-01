@@ -142,7 +142,9 @@ describe('PreviewArea mask editor toolbar', () => {
       (await screen.findByTestId('source-monitor')).closest('[data-interaction-locked="true"]'),
     ).toBeTruthy()
     expect(
-      (await screen.findByTestId('color-scopes-monitor')).closest('[data-interaction-locked="true"]'),
+      (await screen.findByTestId('color-scopes-monitor')).closest(
+        '[data-interaction-locked="true"]',
+      ),
     ).toBeTruthy()
   })
 
