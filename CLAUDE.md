@@ -153,3 +153,20 @@ src/
 - **Feature boundary rules** — cross-feature imports must go through `deps/` adapter modules. The pre-push hook enforces this via `check:boundaries`. (A `check:legacy-lib-imports` tripwire also catches any reintroduction of `@/lib/*` imports — the `src/lib/` layer was removed and merged into `infrastructure/`.)
 - **GPU effect data textures**: effects that need LUT-like auxiliary data declare `dataTexture` in their `GpuEffectDefinition`. The pipeline binds it at `@group(0) @binding(3)`, caches the texture per pass, rewrites same-size contents with `queue.writeTexture`, and invalidates bind groups only when dimensions change. `gpu-curves` uses this for the 256x1 curve LUT; `gpu-lut` embeds resampled `.cube` data in effect params so project bundles and export workers need no side channel.
 - **Implicit color grade controls**: the Color workspace renders wheels and curves even before those effects exist. `ColorGradeSection` previews synthetic grade entries through the gizmo effects-preview path during live drags, then lazily creates the real GPU effect on commit. Do not persist synthetic `__grade:*` ids or attach keyframes to them.
+
+<!--VITE PLUS START-->
+
+# Using Vite+, the Unified Toolchain for the Web
+
+This project is using Vite+, a unified toolchain built on top of Vite, Rolldown, Vitest, tsdown, Oxlint, Oxfmt, and Vite Task. Vite+ wraps runtime management, package management, and frontend tooling in a single global CLI called `vp`. Vite+ is distinct from Vite, and it invokes Vite through `vp dev` and `vp build`. Run `vp help` to print a list of commands and `vp <command> --help` for information about a specific command.
+
+Docs are local at `node_modules/vite-plus/docs` or online at https://viteplus.dev/guide/.
+
+## Review Checklist
+
+- [ ] Run `vp install` after pulling remote changes and before getting started.
+- [ ] Run `vp check` and `vp test` to format, lint, type check and test changes.
+- [ ] Check if there are `vite.config.ts` tasks or `package.json` scripts necessary for validation, run via `vp run <script>`.
+- [ ] If setup, runtime, or package-manager behavior looks wrong, run `vp env doctor` and include its output when asking for help.
+
+<!--VITE PLUS END-->

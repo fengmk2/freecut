@@ -12,6 +12,7 @@ the output. Fidelity matches the in-app export — including hardware GPU effect
 transitions, audio, and (for edits) transition repair + linked-clip cascades.
 
 Two CLIs:
+
 - **`render.mjs`** (`npm run headless`) — render a project (or a slice) to video/audio.
 - **`edit.mjs`** — apply structural edits (add/split/trim/move/delete/transition) and write the project back.
 
@@ -72,23 +73,23 @@ npm run headless -- --workspace "<ws>" --project <id> --audio-only --container m
 
 ### Options
 
-| Flag | Default | Notes |
-|------|---------|-------|
-| `--workspace <dir>` | (required) | The FreeCut workspace folder (picked in the app). |
-| `--project <id\|file>` | (required) | Project id under the workspace, or a path to a `project.json`. |
-| `--out <path>` | `headless/output/<name>.<ext>` | Output file. |
-| `--codec <c>` | `h264` | `h264 \| h265 \| vp9 \| vp8 \| av1`. Falls back automatically if unsupported. |
-| `--container <c>` | derived | `mp4 \| webm \| mov \| mkv` (or `mp3 \| wav \| m4a` with `--audio-only`). |
-| `--resolution <WxH>` | project metadata | e.g. `1920x1080`. |
-| `--fps <n>` | project metadata | |
-| `--quality <q>` | `high` | `low \| medium \| high \| ultra` (controls bitrate). |
-| `--in <sec>` | 0 | Render range start (seconds). |
-| `--out-sec <sec>` | end | Render range end (seconds). |
-| `--duration <sec>` | — | Render this many seconds from `--in`. |
-| `--audio-only` | off | Render audio only. |
-| `--build` | off | Build `dist/` first if the harness isn't built. |
-| `--head` | off | Run a visible browser for debugging. |
-| `--harness-url <url>` | — | Dev mode: drive a running `npm run dev` server instead of `dist/`. |
+| Flag                   | Default                        | Notes                                                                         |
+| ---------------------- | ------------------------------ | ----------------------------------------------------------------------------- |
+| `--workspace <dir>`    | (required)                     | The FreeCut workspace folder (picked in the app).                             |
+| `--project <id\|file>` | (required)                     | Project id under the workspace, or a path to a `project.json`.                |
+| `--out <path>`         | `headless/output/<name>.<ext>` | Output file.                                                                  |
+| `--codec <c>`          | `h264`                         | `h264 \| h265 \| vp9 \| vp8 \| av1`. Falls back automatically if unsupported. |
+| `--container <c>`      | derived                        | `mp4 \| webm \| mov \| mkv` (or `mp3 \| wav \| m4a` with `--audio-only`).     |
+| `--resolution <WxH>`   | project metadata               | e.g. `1920x1080`.                                                             |
+| `--fps <n>`            | project metadata               |                                                                               |
+| `--quality <q>`        | `high`                         | `low \| medium \| high \| ultra` (controls bitrate).                          |
+| `--in <sec>`           | 0                              | Render range start (seconds).                                                 |
+| `--out-sec <sec>`      | end                            | Render range end (seconds).                                                   |
+| `--duration <sec>`     | —                              | Render this many seconds from `--in`.                                         |
+| `--audio-only`         | off                            | Render audio only.                                                            |
+| `--build`              | off                            | Build `dist/` first if the harness isn't built.                               |
+| `--head`               | off                            | Run a visible browser for debugging.                                          |
+| `--harness-url <url>`  | —                              | Dev mode: drive a running `npm run dev` server instead of `dist/`.            |
 
 ## Notes & limitations
 
@@ -131,23 +132,23 @@ Safe by default: with neither `--out` nor `--in-place` it's a dry run.
 
 `edits.json` is an array of ops (each `{ "op": "<name>", ... }`):
 
-| op | fields |
-|----|--------|
-| `addText` | `text`, `from`, `durationInFrames`, `trackId?`, `color?`, `fontSize?`, `fontWeight?`, `textAlign?`, `verticalAlign?` |
-| `addItem` | `item` (a full `TimelineItem`) |
-| `updateItem` | `id`, `updates` (partial `TimelineItem`) |
-| `moveItem` | `id`, `from`, `trackId?` |
-| `removeItems` | `ids` (array) |
-| `split` | `id`, `frame` |
-| `trimStart` / `trimEnd` | `id`, `amount` |
-| `addTransition` | `leftClipId`, `rightClipId`, `type?`, `durationInFrames?` |
-| `addClip` | `mediaId`, `from`, `trackId?`, `durationInFrames?` (video adds a linked audio companion; source range computed from the media's metadata) |
-| `addTrack` | `kind?` (`video`\|`audio`), `order?` |
-| `addKeyframe` | `itemId`, `property`, `frame`, `value`, `easing?` |
-| `removeKeyframes` | `itemId`, `property` |
-| `addEffect` | `itemId`, `gpuEffectType` + `params?` (or a full `effect` object) |
-| `removeEffect` | `itemId`, `effectId` |
-| `setTransform` | `id`, `transform` (e.g. `{ "x": 0, "y": 150, "opacity": 0.5, "rotation": 0 }`) |
+| op                      | fields                                                                                                                                    |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `addText`               | `text`, `from`, `durationInFrames`, `trackId?`, `color?`, `fontSize?`, `fontWeight?`, `textAlign?`, `verticalAlign?`                      |
+| `addItem`               | `item` (a full `TimelineItem`)                                                                                                            |
+| `updateItem`            | `id`, `updates` (partial `TimelineItem`)                                                                                                  |
+| `moveItem`              | `id`, `from`, `trackId?`                                                                                                                  |
+| `removeItems`           | `ids` (array)                                                                                                                             |
+| `split`                 | `id`, `frame`                                                                                                                             |
+| `trimStart` / `trimEnd` | `id`, `amount`                                                                                                                            |
+| `addTransition`         | `leftClipId`, `rightClipId`, `type?`, `durationInFrames?`                                                                                 |
+| `addClip`               | `mediaId`, `from`, `trackId?`, `durationInFrames?` (video adds a linked audio companion; source range computed from the media's metadata) |
+| `addTrack`              | `kind?` (`video`\|`audio`), `order?`                                                                                                      |
+| `addKeyframe`           | `itemId`, `property`, `frame`, `value`, `easing?`                                                                                         |
+| `removeKeyframes`       | `itemId`, `property`                                                                                                                      |
+| `addEffect`             | `itemId`, `gpuEffectType` + `params?` (or a full `effect` object)                                                                         |
+| `removeEffect`          | `itemId`, `effectId`                                                                                                                      |
+| `setTransform`          | `id`, `transform` (e.g. `{ "x": 0, "y": 150, "opacity": 0.5, "rotation": 0 }`)                                                            |
 
 `addClip` reads the media's `metadata.json` (passed automatically by the CLI),
 so its source range, fps, and audio companion match an in-app import.
@@ -178,12 +179,12 @@ curl -X POST localhost:8787/edit -H 'content-type: application/json' \
   -d '{"project":"<id>","ops":[{"op":"addText","text":"Hi","from":0}]}'
 ```
 
-| Route | Body | Returns |
-|-------|------|---------|
-| `GET /health` | — | `{ ok, gpu: { available, vendor, architecture }, software, harnessUrl }` |
-| `GET /projects` | — | `[{ id, name, updatedAt }]` |
-| `POST /render` | `{ project\|projectObject, codec?, container?, resolution?, fps?, quality?, in?, outSec?, duration?, audioOnly? }` | the rendered file (attachment) |
-| `POST /edit` | `{ project\|projectObject, ops, ... }` | `{ ok, project, applied, results }` |
+| Route           | Body                                                                                                               | Returns                                                                  |
+| --------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `GET /health`   | —                                                                                                                  | `{ ok, gpu: { available, vendor, architecture }, software, harnessUrl }` |
+| `GET /projects` | —                                                                                                                  | `[{ id, name, updatedAt }]`                                              |
+| `POST /render`  | `{ project\|projectObject, codec?, container?, resolution?, fps?, quality?, in?, outSec?, duration?, audioOnly? }` | the rendered file (attachment)                                           |
+| `POST /edit`    | `{ project\|projectObject, ops, ... }`                                                                             | `{ ok, project, applied, results }`                                      |
 
 `project` is a workspace project id; `projectObject` is an inline Project JSON.
 Media is resolved from the service's workspace by id.

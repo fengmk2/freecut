@@ -540,9 +540,9 @@ export const Timeline = memo(function Timeline({ duration }: TimelineProps) {
     // Content clip rows live under the track-sections surface, scoped here so we don't
     // also match the header rows (both use data-track-id).
     const getContentRows = (): NodeListOf<HTMLElement> | HTMLElement[] =>
-      document.getElementById('timeline-track-sections')?.querySelectorAll<HTMLElement>(
-        '[data-track-id]',
-      ) ?? []
+      document
+        .getElementById('timeline-track-sections')
+        ?.querySelectorAll<HTMLElement>('[data-track-id]') ?? []
 
     let rafId: number
     const updateDragVisuals = () => {
